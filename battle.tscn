@@ -1,0 +1,595 @@
+[gd_scene format=3 uid="uid://wao33jh2n31h"]
+
+[ext_resource type="Script" uid="uid://bg1d2h1uvwae4" path="res://Battle.gd" id="1_ip7xm"]
+[ext_resource type="Resource" uid="uid://bufjyg3lx8fk8" path="res://Knife.tres" id="2_6t8i5"]
+[ext_resource type="Texture2D" uid="uid://chbsb2380rp0f" path="res://Fridge Proto.png" id="2_i431l"]
+[ext_resource type="Texture2D" uid="uid://cdisyg38pjhdl" path="res://Knife Proto.png" id="2_oxp8w"]
+[ext_resource type="Script" uid="uid://bv6fbscvgpl8d" path="res://spectators.gd" id="4_pihy1"]
+[ext_resource type="Texture2D" uid="uid://24lx6lrkedc1" path="res://Background Group.png" id="5_slotg"]
+[ext_resource type="Texture2D" uid="uid://v5kvim6m84ir" path="res://Background Egg PNG.png" id="6_ix8ov"]
+[ext_resource type="Texture2D" uid="uid://bogg3cqh676oj" path="res://Background Carrot.png" id="7_bx4lf"]
+[ext_resource type="PackedScene" uid="uid://dpip1o8x0w4tb" path="res://Separated Scenes/team.tscn" id="7_lcjiy"]
+[ext_resource type="Texture2D" uid="uid://e5n85fni0vjv" path="res://Background Brocolli PNG.png" id="8_22sa7"]
+[ext_resource type="PackedScene" uid="uid://ql45mgnqerka" path="res://Separated Scenes/animations.tscn" id="8_ol6im"]
+[ext_resource type="Texture2D" uid="uid://coq0fulkhm2w7" path="res://Background Apple.png" id="9_aacmo"]
+[ext_resource type="PackedScene" uid="uid://dqk3fx56k06cl" path="res://Separated Scenes/ui.tscn" id="9_b1i6x"]
+[ext_resource type="Texture2D" uid="uid://bwlxx2qewr6s2" path="res://Turn Indicator Ring_r3.png" id="16_22sa7"]
+[ext_resource type="Texture2D" uid="uid://d15u4iqyf6o74" path="res://Turn Indicator Ring_r1.png" id="16_bx4lf"]
+[ext_resource type="Texture2D" uid="uid://6mac3ugfq8ga" path="res://Bowl PNG.png" id="16_ix8ov"]
+[ext_resource type="PackedScene" uid="uid://pgvbttqh0dqv" path="res://Separated Scenes/puns.tscn" id="16_slotg"]
+[ext_resource type="Texture2D" uid="uid://7ex5y2koj8jo" path="res://Turn Indicator Ring_r2.png" id="17_22sa7"]
+[ext_resource type="Texture2D" uid="uid://btcdt2b5hibk1" path="res://T-Bone PNG.png" id="17_bx4lf"]
+[ext_resource type="Texture2D" uid="uid://35t5c6xlg512" path="res://Defend_Icon_1.png" id="19_s5g7e"]
+[ext_resource type="PackedScene" uid="uid://bq84p8cc4k8wu" path="res://audio.tscn" id="20_aacmo"]
+[ext_resource type="Texture2D" uid="uid://b7weh0g3iq6g1" path="res://Taunt_Icon_1.png" id="20_j128n"]
+[ext_resource type="Texture2D" uid="uid://cwcm40vqwk25y" path="res://Dmg_Up_1.png" id="21_nt5qs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8lcdg"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knvjn"]
+bg_color = Color(0.21021196, 0.7166735, 0.15961385, 1)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7sfm4"]
+load_path = "res://.godot/imported/Tomato Proto.png-ea8a8c50d62b8af0f65dcb43b950be76.ctex"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvedi"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_otrq3"]
+bg_color = Color(0.646029, 0.64602906, 0.6460289, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lph3l"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_i431l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6t8i5"]
+resource_name = "enemy_damaged"
+length = 0.76666665
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.4, 0.5, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mhv3b"]
+resource_name = "enemy_died"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0npn6"]
+resource_name = "mini_shake"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1, -2), Vector2(2, 2), Vector2(-2, 2), Vector2(1, -2), Vector2(-3, -2), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dw4jg"]
+resource_name = "shake"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(39, 28), Vector2(34, -20), Vector2(1, 3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0npn6"]
+_data = {
+&"RESET": SubResource("Animation_i431l"),
+&"enemy_damaged": SubResource("Animation_6t8i5"),
+&"enemy_died": SubResource("Animation_mhv3b"),
+&"mini_shake": SubResource("Animation_0npn6"),
+&"shake": SubResource("Animation_dw4jg")
+}
+
+[node name="Battle" type="Control" unique_id=219101860]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ip7xm")
+enemy = ExtResource("2_6t8i5")
+double_attack_text = "Out of desperation it attacks again! I wouldn't want to be that food!"
+double_attack_damage_ratio = 0.6
+
+[node name="Background" type="TextureRect" parent="." unique_id=803507479]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 10.0
+offset_right = 1175.0
+offset_bottom = 646.0
+texture = ExtResource("2_i431l")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background" unique_id=860595946]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Spectators" type="FoldableContainer" parent="Background" unique_id=607183237]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -10.0
+offset_right = 23.0
+offset_bottom = 22.0
+script = ExtResource("4_pihy1")
+
+[node name="BackgroundGroup" type="Sprite2D" parent="Background/Spectators" unique_id=646856166]
+position = Vector2(236.00012, 264)
+scale = Vector2(0.06603774, 0.06603774)
+texture = ExtResource("5_slotg")
+
+[node name="BackgroundEggPng" type="Sprite2D" parent="Background/Spectators" unique_id=127832062]
+position = Vector2(339, 274)
+scale = Vector2(0.078646064, 0.078646064)
+texture = ExtResource("6_ix8ov")
+
+[node name="BackgroundCarrot" type="Sprite2D" parent="Background/Spectators" unique_id=653921981]
+position = Vector2(374.00012, 261.00006)
+scale = Vector2(0.07424793, 0.074247934)
+texture = ExtResource("7_bx4lf")
+
+[node name="BackgroundEggPng2" type="Sprite2D" parent="Background/Spectators" unique_id=741247985]
+position = Vector2(411, 275)
+scale = Vector2(0.074472874, 0.0744729)
+texture = ExtResource("6_ix8ov")
+
+[node name="BackgroundBrocolliPng" type="Sprite2D" parent="Background/Spectators" unique_id=2043581553]
+position = Vector2(450, 265)
+scale = Vector2(0.08404533, 0.08404533)
+texture = ExtResource("8_22sa7")
+
+[node name="BackgroundApple" type="Sprite2D" parent="Background/Spectators" unique_id=108059993]
+position = Vector2(496, 274)
+scale = Vector2(0.056562502, 0.05656249)
+texture = ExtResource("9_aacmo")
+
+[node name="BackgroundEggPng3" type="Sprite2D" parent="Background/Spectators" unique_id=1240633719]
+position = Vector2(544, 274.00003)
+scale = Vector2(0.079525724, 0.079525724)
+texture = ExtResource("6_ix8ov")
+
+[node name="BackgroundBrocolliPng2" type="Sprite2D" parent="Background/Spectators" unique_id=1548040893]
+position = Vector2(586.00006, 268)
+scale = Vector2(0.07692308, 0.07692308)
+texture = ExtResource("8_22sa7")
+
+[node name="BackgroundCarrot2" type="Sprite2D" parent="Background/Spectators" unique_id=1500892206]
+position = Vector2(629.0001, 260.99997)
+scale = Vector2(0.06954892, 0.06954891)
+texture = ExtResource("7_bx4lf")
+
+[node name="BackgroundApple2" type="Sprite2D" parent="Background/Spectators" unique_id=330072257]
+position = Vector2(677, 267)
+scale = Vector2(0.07000002, 0.07000002)
+texture = ExtResource("9_aacmo")
+
+[node name="BackgroundEggPng4" type="Sprite2D" parent="Background/Spectators" unique_id=260937186]
+position = Vector2(768.00006, 276.99997)
+scale = Vector2(0.06876126, 0.06876127)
+texture = ExtResource("6_ix8ov")
+
+[node name="BackgroundBrocolliPng3" type="Sprite2D" parent="Background/Spectators" unique_id=788334150]
+position = Vector2(723, 255)
+scale = Vector2(0.10541312, 0.10541312)
+texture = ExtResource("8_22sa7")
+
+[node name="BackgroundApple3" type="Sprite2D" parent="Background/Spectators" unique_id=85831838]
+position = Vector2(131, 276)
+scale = Vector2(0.051562537, 0.051562533)
+texture = ExtResource("9_aacmo")
+
+[node name="BackgroundEggPng5" type="Sprite2D" parent="Background/Spectators" unique_id=358229609]
+position = Vector2(950, 273)
+scale = Vector2(0.06107202, 0.06107202)
+texture = ExtResource("6_ix8ov")
+
+[node name="BackgroundApple4" type="Sprite2D" parent="Background/Spectators" unique_id=876731428]
+position = Vector2(996.9999, 266.00006)
+scale = Vector2(0.067499995, 0.0675)
+texture = ExtResource("9_aacmo")
+
+[node name="BackgroundBrocolliPng4" type="Sprite2D" parent="Background/Spectators" unique_id=992096774]
+position = Vector2(1049, 253.00003)
+scale = Vector2(0.097578235, 0.097578235)
+texture = ExtResource("8_22sa7")
+
+[node name="BackgroundApple5" type="Sprite2D" parent="Background/Spectators" unique_id=1791764458]
+position = Vector2(820, 269)
+scale = Vector2(0.07750013, 0.07750012)
+texture = ExtResource("9_aacmo")
+
+[node name="BackgroundCarrot3" type="Sprite2D" parent="Background/Spectators" unique_id=411217839]
+position = Vector2(869, 257)
+scale = Vector2(0.078947514, 0.07894751)
+texture = ExtResource("7_bx4lf")
+
+[node name="BackgroundBrocolliPng5" type="Sprite2D" parent="Background/Spectators" unique_id=1689831340]
+position = Vector2(907, 268)
+scale = Vector2(0.061965853, 0.06196586)
+texture = ExtResource("8_22sa7")
+
+[node name="Enemy" type="TextureRect" parent="." unique_id=131894994]
+layout_mode = 0
+offset_left = 746.0
+offset_top = 209.0
+offset_right = 1049.0
+offset_bottom = 468.0
+texture = ExtResource("2_oxp8w")
+expand_mode = 1
+
+[node name="VBoxContainerE" type="VBoxContainer" parent="Enemy" unique_id=1311736064]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.5
+offset_top = 123.5
+offset_right = 181.5
+offset_bottom = 139.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Enemy/VBoxContainerE" unique_id=1271125045]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_8lcdg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_knvjn")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Enemy/VBoxContainerE/ProgressBar" unique_id=836580600]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.5
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "HP:45/50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DamageNumbersOriginEnemy" type="Node2D" parent="Enemy" unique_id=2076936577]
+position = Vector2(158, 129)
+
+[node name="Hero" type="TextureRect" parent="." unique_id=1605867009]
+z_index = 1
+layout_mode = 0
+offset_left = 232.0
+offset_top = 292.0
+offset_right = 400.0
+offset_bottom = 465.0
+texture = SubResource("CompressedTexture2D_7sfm4")
+expand_mode = 1
+
+[node name="VBoxContainerH" type="VBoxContainer" parent="Hero" unique_id=288932161]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = 109.5
+offset_right = 93.0
+offset_bottom = 125.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Hero/VBoxContainerH" unique_id=470735672]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_8lcdg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_knvjn")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Hero/VBoxContainerH/ProgressBar" unique_id=764535342]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.5
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "HP:45/50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DamageNumbersOriginHero" type="Node2D" parent="Hero" unique_id=338573349]
+position = Vector2(64, 107)
+
+[node name="HealingNumbersOriginHero" type="Node2D" parent="Hero" unique_id=691530593]
+position = Vector2(64, 107)
+
+[node name="Ally2" type="TextureRect" parent="." unique_id=1971558417]
+z_index = 1
+layout_mode = 0
+offset_left = 53.0
+offset_top = 341.0
+offset_right = 241.0
+offset_bottom = 463.0
+texture = ExtResource("16_ix8ov")
+expand_mode = 1
+
+[node name="VBoxContainerH" type="VBoxContainer" parent="Ally2" unique_id=708496011]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = 109.5
+offset_right = 93.0
+offset_bottom = 125.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Ally2/VBoxContainerH" unique_id=746418552]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_8lcdg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_knvjn")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Ally2/VBoxContainerH/ProgressBar" unique_id=1154693109]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.5
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "HP:45/50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DamageNumbersOriginAlly2" type="Node2D" parent="Ally2" unique_id=1237288621]
+position = Vector2(65, 67)
+
+[node name="HealingNumbersOriginAlly2" type="Node2D" parent="Ally2" unique_id=183436425]
+position = Vector2(65, 67)
+
+[node name="Ally1" type="TextureRect" parent="." unique_id=2034913859]
+z_index = 1
+layout_mode = 0
+offset_left = 396.0
+offset_top = 301.0
+offset_right = 584.0
+offset_bottom = 476.0
+texture = ExtResource("17_bx4lf")
+expand_mode = 1
+
+[node name="VBoxContainerH" type="VBoxContainer" parent="Ally1" unique_id=794760652]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = 109.5
+offset_right = 93.0
+offset_bottom = 125.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Ally1/VBoxContainerH" unique_id=1182617745]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_8lcdg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_knvjn")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Ally1/VBoxContainerH/ProgressBar" unique_id=1096640674]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.5
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "HP:45/50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DamageNumbersOriginAlly1" type="Node2D" parent="Ally1" unique_id=856645379]
+position = Vector2(80, 105)
+
+[node name="HealingNumbersOriginAlly1" type="Node2D" parent="Ally1" unique_id=619201341]
+position = Vector2(80, 105)
+
+[node name="ActionsPanel" type="Panel" parent="." unique_id=674583537]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 43.0
+offset_top = -161.0
+offset_right = 227.0
+offset_bottom = -3.0
+grow_vertical = 0
+
+[node name="Actions" type="HBoxContainer" parent="ActionsPanel" unique_id=779648183]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -77.5
+offset_right = 112.5
+offset_bottom = 80.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="ActionsPanel/Actions" unique_id=1282397259]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_cvedi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_otrq3")
+text = "Roll"
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button2" type="Button" parent="ActionsPanel/Actions" unique_id=503240541]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_cvedi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_otrq3")
+text = "Trichome
+Shield"
+icon_alignment = 1
+expand_icon = true
+
+[node name="Textbox" type="Panel" parent="." unique_id=1278956044]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 19.0
+offset_top = 7.0
+offset_right = -33.0
+offset_bottom = 158.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lph3l")
+
+[node name="Label" type="Label" parent="Textbox" unique_id=1049170455]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "A KNIFE blocks your path!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1566394374]
+libraries/ = SubResource("AnimationLibrary_0npn6")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=9632254]
+anchor_mode = 0
+
+[node name="Team" parent="." unique_id=1447434418 instance=ExtResource("7_lcjiy")]
+
+[node name="Animations" parent="." unique_id=1683575310 instance=ExtResource("8_ol6im")]
+knife_frame_time = 0.35
+knife_scale = 0.35
+
+[node name="UI" parent="." unique_id=872549265 instance=ExtResource("9_b1i6x")]
+visible = true
+layout_mode = 1
+turn_indicator_frames = Array[Texture2D]([ExtResource("16_22sa7"), ExtResource("16_bx4lf"), ExtResource("17_22sa7")])
+turn_indicator_scale = 0.15
+turn_indicator_offset = Vector2(0, -100)
+defend_icon = ExtResource("19_s5g7e")
+taunt_icon = ExtResource("20_j128n")
+dmg_up_icon = ExtResource("21_nt5qs")
+
+[node name="Puns" parent="." unique_id=1723135082 instance=ExtResource("16_slotg")]
+
+[node name="Audio" parent="." unique_id=1620446832 instance=ExtResource("20_aacmo")]
+music_volume_db = -6.0
+damage_volume_db = -6.0
+damage_pitch_variation = 0.0
+heal_volume_db = -6.0
+slice_volume_db = -6.0
+hit_volume_db = -6.0
+death_volume_db = -6.0
+cheer_volume_db = -8.0
+jeer_volume_db = -8.0
